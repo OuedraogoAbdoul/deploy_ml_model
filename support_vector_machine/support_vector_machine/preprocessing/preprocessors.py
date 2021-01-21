@@ -38,8 +38,8 @@ class FillnaNumericalImputs(BaseEstimator, TransformerMixin):
 class DropFeatures(BaseEstimator, TransformerMixin):
     """docstring for ."""
 
-    def __init__(self, cat_columns):
-        self.cat_columns = cat_columns
+    def __init__(self, unused_columns):
+        self.unused_columns = unused_columns
 
     def fit(self, X, y=None):
         return self
@@ -47,5 +47,5 @@ class DropFeatures(BaseEstimator, TransformerMixin):
     def transform(self, X):
 
         X = X.copy()
-        X = X.drop(self.cat_columns)
+        X = X.drop(self.unused_columns, axis=1)
         return X
