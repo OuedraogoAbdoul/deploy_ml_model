@@ -22,10 +22,7 @@ def train_svm_model():
     # X_test.to_csv(f"{config.DATASETDIR}/X_test.csv", index=False)
     # y_train.to_csv(f"{config.DATASETDIR}/y_train.csv", index=False)
     # y_test.to_csv(f"{config.DATASETDIR}/y_test.csv", index=False)
-    parameters = [{'C': [1, 10, 100, 1000], 'kernel': ['linear']},
-        {'C': [1, 10, 100, 1000], 'kernel': ['rbf'], 'gamma': [0.5, 0.1, 0.01, 0.001, 0.0001]}]
-    clf = GridSearchCV(model_pipeline.SVR_model, parameters)
-
+    clf = model_pipeline.clf
     clf.fit(X_train, y_train)
     save_model(save_model=clf.best_estimator_)
 
