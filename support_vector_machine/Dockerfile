@@ -5,6 +5,6 @@ WORKDIR /app/ml_model
 ADD . /app/ml_model/
 
 RUN pip install --upgrade pip
-RUN pip install -r rrequirement.txt
+RUN pip install -r requirement.txt
 
-CMD["bash"]
+CMD ["bash"]
