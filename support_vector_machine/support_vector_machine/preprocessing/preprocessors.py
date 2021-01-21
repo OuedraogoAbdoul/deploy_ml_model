@@ -1,14 +1,51 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 
-class CategoricalInputHandler(BaseEstimator, TransformerMixin):
+class FillnaCategoricalImputs(BaseEstimator, TransformerMixin):
     """docstring for ."""
 
-    def __init__(self, arg):
-        self.arg = arg
+    def __init__(self, cat_columns):
+        self.cat_columns = cat_columns
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+
+        X = X.copy()
+        for feature in self.cat_columns:
+            X[feature] = x[feature].fillna("missing")
+
+        return X
 
 
-class NumericalInputHandler(BaseEstimator, TransformerMixin):
+class FillnaNumericalImputs(BaseEstimator, TransformerMixin):
     """docstring for ."""
 
-    def __init__(self, arg):
-        self.arg = arg
+    def __init__(self, num_columns):
+        self.num_columns = num_columns
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+
+        X = X.copy()
+        for feature in self.num_columns:
+            X[feature] = x[feature].fillna("missing")
+
+        return X
+
+class DropFeatures(BaseEstimator, TransformerMixin):
+    """docstring for ."""
+
+    def __init__(self, cat_columns):
+        self.cat_columns = cat_columns
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+
+        X = X.copy()
+        X = X.drop(self.cat_columns)
+        return X
