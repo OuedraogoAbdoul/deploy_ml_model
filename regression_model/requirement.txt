@@ -1,10 +1,10 @@
-
-
-# Model building env
+# Model env
 numpy==1.19.5
 pandas==1.2.0
 scikit-learn==0.24.0
 joblib==1.0.0
+yfinance==0.1.55
+pandas-datareader==0.9.0
 
 
 # testing env

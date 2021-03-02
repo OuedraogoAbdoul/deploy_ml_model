@@ -1,10 +1,12 @@
-FROM python:3.9.1
+FROM python:3.8
 
 WORKDIR /usr/src/ml_app/
 
 ADD . /usr/src/ml_app/
 
 RUN pip install --upgrade pip
+RUN  python3.8 -m pip install --upgrade pip
+
 RUN pip install -r /usr/src/ml_app/regression_model/requirement.txt
 RUN pip install notebook
 
