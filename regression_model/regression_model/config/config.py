@@ -8,25 +8,26 @@ ROOT = ROOT.split("/")[-1]
 ## Data path
 SYMBOLS = "BTC-USD"
 DATASETS = ROOT + "/data/"
-X_train = DATASETS + "X_train.csv"
-y_train = DATASETS + "y_train.csv"
-
-
-X_test = DATASETS + "X_test.csv"
-y_test = DATASETS + "y_test.csv"
+train = DATASETS + "train.csv"
+valid = DATASETS + "valid.csv"
 
 
 DATAFILE = "BTC-USD.csv"
 DATA = DATASETS + DATAFILE
-TRAININGDATA = DATASETS + "train.csv"
-TESTINGDATA = DATASETS + "test.csv"
 WRONGDATAPATH = 999
+
+DATA = DATASETS + DATAFILE
+TRAININGDATA = DATASETS + "train.csv"
+TESTINGDATA = DATASETS + "valid.csv"
 
 #####prediction feature
 
-TARGER = "Open"
+TARGER = "Adj Close"
 
 
 ### Features
+FEATURESSELECTED = ["Open","High","Low","Close","Volume"]
 
-FEATURES = [""]
+DROPFEATURES = ["Date"]
+
+PREDICTIONWINDOW = 7
