@@ -1,0 +1,42 @@
+# Package model directory
+package_name: regression_model
+
+# Data files names
+training_data_file: train.csv
+test_data_file: valid.csv
+
+
+# Unused columns name
+features_unsed:
+  - Crse
+  - CRN
+
+# List of categorical varaibles
+features_cat:
+  - Crse
+  - CRN
+
+features_num:
+  - INITCAP
+  - WL_CAP
+  - num_gradute
+  - num_admited
+
+
+# features used for production training
+features_train:
+  - INITCAP
+  - WL_CAP
+  - num_gradute
+  - num_admited
+
+# features used for production training
+features_target: "ACTCAP"
+
+# Data spliting variables
+test_size: 0.2
+randomd_state: 42
+
+
+# list of Machine learning model to select from
+
