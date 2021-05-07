@@ -1,11 +1,8 @@
-from regression_model.config.config import TRAININGDATA, WRONGDATAPATH
+# content of test_sample.py
+def inc(x):
+    return x + 1
 
-
-def test_TRAININGDATA():
-    
-    assert DATA[-3:] == "csv"
-
-def test_WRONGDATAPATH():
-    assert WRONGDATAPATH != ""
+def test_answer():
+    assert inc(4) == 5
 
     

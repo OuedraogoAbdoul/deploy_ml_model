@@ -1,11 +1,5 @@
 # Model env
-numpy
-pandas
-pydantic
-scikit-learn
-strictyaml
-joblib
+
 
 # testing env
 pytest
-tox
