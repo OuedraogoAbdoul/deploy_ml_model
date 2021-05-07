@@ -1,33 +1,23 @@
 # Import libraries 
 from pathlib import Path
+from strictyaml import load, Map, Str, Int, Seq, YAMLError
 
-# Get main folder path
-ROOT = f"{Path(__file__).resolve().parents[2]}"
-ROOT = ROOT.split("/")[-1]
+import regression_model
 
-## Data path
-SYMBOLS = "BTC-USD"
-DATASETS = ROOT + "/data/"
-train = DATASETS + "train.csv"
-valid = DATASETS + "valid.csv"
+# Project Directories
+PACKAGE_ROOT = Path(regression_model.__file__).resolve().parent
+ROOT = PACKAGE_ROOT.parent
+CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
 
+print(CONFIG_FILE_PATH)
+# DATASET_DIR = PACKAGE_ROOT / "datasets"
+# TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
 
-DATAFILE = "BTC-USD.csv"
-DATA = DATASETS + DATAFILE
-WRONGDATAPATH = 999
+def fetch_yml_cofig_file():
+    with open(f"{example.yaml}", 'r') as stream:
+        try:
+            return  load(conf_file.read())
+        except YAMLError as exc:
+            print(exc)
 
-DATA = DATASETS + DATAFILE
-TRAININGDATA = DATASETS + "train.csv"
-TESTINGDATA = DATASETS + "valid.csv"
-
-#####prediction feature
-
-TARGER = "Adj Close"
-
-
-### Features
-FEATURESSELECTED = ["Open","High","Low","Close","Volume"]
-
-DROPFEATURES = ["Date"]
-
-PREDICTIONWINDOW = 7
+    return None

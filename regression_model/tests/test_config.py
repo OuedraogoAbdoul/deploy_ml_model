@@ -1,4 +1,4 @@
-from regression_model.config.config import TRAININGDATA, WRONGDATAPATH, DATA
+from regression_model.config.config import TRAININGDATA, WRONGDATAPATH
 
 
 def test_TRAININGDATA():
